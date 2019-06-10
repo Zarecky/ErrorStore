@@ -41,7 +41,6 @@ export default class ShowError extends React.Component {
   }
 
   render() {
-    
     return [
       <Row>
         <h1>Error Info</h1>
@@ -50,7 +49,7 @@ export default class ShowError extends React.Component {
       <Fragment>
         {this.state.error ? [
           <Row>
-            <Col>
+            <Col lg='4'>
               <BaseInfo error={this.state.error}/>
             </Col>
             <Col lg='8' xs='12' className='mt-5 mt-lg-0'>

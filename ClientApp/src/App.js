@@ -6,6 +6,7 @@ import Register from "./components/Register";
 import EditProfile from "./components/EditProfile";
 import Users from "./components/Users";
 import ErrorList from "./components/ErrorList";
+import {Redirect} from "react-router-dom";
 
 export default class App extends Component {
   static displayName = App.name;
@@ -25,7 +26,8 @@ export default class App extends Component {
   render () {
     return (
       <Layout>
-        <Route path='/errors' render={(props) => <ErrorList {...props} />} />
+        <Redirect to='/errors'/>
+        <Route exact path='/errors' render={(props) => <ErrorList {...props} />} />
         <Route path='/users' component={Users} />
         <Route path='/login' component={Login} />
         <Route path='/register' component={Register} />

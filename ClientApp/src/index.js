@@ -18,6 +18,10 @@ export const renderApp = (state, callback = () => {}) => {
         callback);
 };
 
+export function getDate(date) {
+    return (new Date(date)).toLocaleString('ru', {year: 'numeric', month: 'numeric', day: 'numeric'})
+}
+
 export let state = {
     user: {
         authenticated: false,
