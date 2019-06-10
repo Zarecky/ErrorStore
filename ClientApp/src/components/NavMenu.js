@@ -13,8 +13,7 @@ import {
 import { Link } from 'react-router-dom';
 import './NavMenu.css';
 import auth from "../API/auth";
-import {Switch} from "react-router";
-import {Route} from "react-router";
+import {Switch, Route} from "react-router";
 import {state} from "../index";
 
 export class NavMenu extends Component {

@@ -41,28 +41,28 @@ export default class ShowError extends React.Component {
   }
 
   render() {
-    return [
-      <Row>
-        <h1>Error Info</h1>
-      </Row>,
-      <hr/>,
+    return (
       <Fragment>
-        {this.state.error ? [
-          <Row>
-            <Col lg='4'>
-              <BaseInfo error={this.state.error}/>
-            </Col>
-            <Col lg='8' xs='12' className='mt-5 mt-lg-0'>
-              <ErrorHistory history={this.state.error.history}/>
-            </Col>
-          </Row>,
-          <Fragment>
-            {state.user.authenticated && this.state.visibleChangeState ? 
-              <ChangeState onChanged={this.handleChangeState} error={this.state.error}/> : 
-              null}
-          </Fragment>
-        ]: null}
+        <Row>
+          <h1>Error Info</h1>
+        </Row>
+        <hr/>
+          {this.state.error &&
+            <Fragment>
+              <Row>
+                <Col lg='4'>
+                  <BaseInfo error={this.state.error}/>
+                </Col>
+                <Col lg='8' xs='12' className='mt-5 mt-lg-0'>
+                  <ErrorHistory history={this.state.error.history}/>
+                </Col>
+              </Row>
+              {state.user.authenticated && this.state.visibleChangeState &&
+                  <ChangeState onChanged={this.handleChangeState} error={this.state.error}/>
+              }
+            </Fragment>
+          }
       </Fragment>
-    ];
+    );
   }
 }

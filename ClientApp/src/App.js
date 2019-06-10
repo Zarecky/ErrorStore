@@ -26,8 +26,8 @@ export default class App extends Component {
   render () {
     return (
       <Layout>
-        <Redirect to='/errors'/>
-        <Route exact path='/errors' render={(props) => <ErrorList {...props} />} />
+        <Route exact path='/' render={() => <Redirect to='/errors' />}/>
+        <Route path='/errors' render={(props) => <ErrorList {...props} />} />
         <Route path='/users' component={Users} />
         <Route path='/login' component={Login} />
         <Route path='/register' component={Register} />
